@@ -1,0 +1,19 @@
+<hello-world>
+    <h1>{opts.heading}</h1>
+    <input 
+        type="text" 
+        name="name" 
+        placeholder="{placeHolder()}">
+
+    <button class="{button-primary: isPrimary}">Button</button>
+    <script>
+        this.placeHolder = function() {
+            return "Type something";
+        }
+        this.isPrimary = true;
+        this.get_username = function() {
+            return 'John Doe'
+        }
+    </script>        
+</hello-world>
+
