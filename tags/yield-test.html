@@ -1,0 +1,17 @@
+<yield-test>
+    <h1>{opts.title}</h1>
+    <div class="head">
+        <yield from="head" />
+    </div>
+
+
+    <div class="foot">
+        <yield from="foot" />
+    </div>
+
+    <style scoped>
+        .head {
+            font-weight: bold;
+        }
+    </style>
+</yield-test>

@@ -16,14 +16,21 @@
     <h1 id="header">Lesson Title</h1>
     <hello-if></hello-if>
     <!-- Lesson Code -->
-    <!-- <user-group group="Noobs" userclass="admin-user">
+    <yield-test title="Blog title">
+      <yield to="foot">
+        <p>Foot content for out blog post</p>
+      </yield>
 
-    </user-group>
-     -->
+      <yield to="head">
+        <p>Head content for out blog post</p>
+      </yield-test>
 
+
+
+    </blog-post>
     <!-- Riot Tags -->
     <script src="tags/user.html" type="riot/tag"></script>
-    <script src="tags/hello-if.html" type="riot/tag"></script>
+    <script src="tags/yield-test.html" type="riot/tag"></script>
     <script>
       riot.mount('*');
     </script>
