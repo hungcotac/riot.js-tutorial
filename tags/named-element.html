@@ -1,0 +1,19 @@
+<named-element>
+
+    <form name="user_form" onsubmit={submit_form}>
+        <input type="text" name="username" oninput={update} value="Vo Hung">
+        <input type="submit" name="summit_button" value="Submit">
+    </form>
+
+    <h4>{username.value}</h4>
+
+    <script>
+        // this.on('mount', this.update);
+
+        this.submit_form = function (e) {
+            alert('hhhhelo');
+            e.preventDefault()
+        }
+    </script>
+
+</named-element>
