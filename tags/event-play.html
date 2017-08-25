@@ -1,0 +1,45 @@
+<event-play>
+    <!-- Tag view -->
+    <!-- <button class="button-primary" onclick={remove_tag}>Unmount This element</button> -->
+    <button class="button-primary" onclick="{increase}">Increase</button>
+    <button class="" onclick="{decrease}">Decrease</button>
+    <h3>{value}</h3>
+    <h3 show={isTooHot}>Too Hot</h3>
+    <p>This is event-play tag</p>
+    <!-- Tag logic -->
+    <script>
+        this.value = 30;
+        this.isTooHot = false;
+        this.increase = function () {
+            this.value++;
+        }
+        this.decrease = function () {
+            this.value--;
+        }
+
+        this.isTooHot = function () {
+
+        }
+
+        this.on('update', function () {
+            if (this.value > 35) {
+                this.isTooHot = true;
+            } else {
+                this.isTooHot = false;
+            }
+        });
+
+
+
+
+        this.remove_tag = function () {
+            this.unmount();
+        }
+        this.on('mount', function () {
+            console.log('Event play mounted!');
+        });
+        this.on('unmount', function () {
+            alert('event-play tag was unmounted from DOM');
+        })
+    </script>
+</event-play>
