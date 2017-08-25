@@ -1,0 +1,50 @@
+<loop-test>
+    <input type="text" name="full_name">
+    <button onclick={add_user}>Add</button>
+    <!-- Object Array -->
+    <h3>Object Array</h3>
+    <div each={user,i in user_array}>
+        <h5>{i+1}. {user.first} {user.last}</h5>
+    </div>
+    <!-- Simple Array -->
+    <h3>Simple Array</h3>
+    <div each={user, i in user_simple_array}>
+        <h5>{i+1}. {user}</h5>
+        <button onclick={log_element}>Click</button>
+    </div>
+    <!-- Object -->
+    <h3>Object</h3>
+    <div each={key, value in user_object}>
+        <h5>{key}: <strong>{value}<strong> </h5>
+    </div>
+
+    <script>
+        this.log_element = function (e) {
+            console.log(e.item)
+        }
+
+        this.add_user = function () {
+            console.log(this.full_name.value);
+            this.user_simple_array.push(this.full_name.value);
+            this.full_name.value = '';
+        }
+        this.user_array = [
+            { first: 'Vo', last: 'Hung' },
+            { first: 'Le', last: 'Lap' },
+            { first: 'Pham', last: 'Tuan' }
+        ];
+
+        this.user_simple_array = [
+            "VO HUNG",
+            "LE LAP",
+            "PHAM TUAN"
+        ];
+
+        this.user_object = {
+            first: 'Vo',
+            last: 'Hung',
+            age: 26,
+            job: 'Engineer'
+        };
+    </script>
+</loop-test>
