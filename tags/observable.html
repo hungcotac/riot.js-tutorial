@@ -1,0 +1,17 @@
+<observable-test>
+    <button onclick={trigger_greeting}>
+        Greet
+    </button>
+    <button onclick={trigger_reload}>
+        Reload
+    </button>
+    <script>
+        this.trigger_greeting = function(){
+            messenger.trigger('greet');
+        }
+
+        this.trigger_reload = function(){
+            messenger.trigger("reload");
+        }
+    </script>
+</observable-test>
