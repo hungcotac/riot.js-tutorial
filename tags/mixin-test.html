@@ -1,0 +1,28 @@
+<mixin-test>
+    <button class="button-primary" name={opts.name}>
+        {opts.label}
+    </button>
+    <script>
+        console.log('----aaaa');
+        var RequireOpt = {
+            init: function () {
+                if (!this.opts.name) {
+                    console.error('Missing name option: ');
+                }
+            },
+            checkOpt: function (optName)  {
+                if(!this.opts[optName]) {
+                    console.error('Missing option: ' + optName);
+                }
+            },
+            name: 'Mixin Test'
+
+        };
+        console.log('----bbbb');
+        this.mixin(RequireOpt);
+        console.log('----ccccc');
+        console.log(this);
+        console.log(riot);
+    </script>
+    </script>
+</mixin-test>
